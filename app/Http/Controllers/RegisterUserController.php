@@ -14,8 +14,8 @@ class RegisterUserController extends Controller
             [
                 'name' => 'required|string|max:255|min:3',
                 'email' => 'required|email|unique:users,email',
-                'phone_no' => 'required|numeric|unique:users,phoneno',
-                'd_o_b' => 'required|date|before:today',
+                'phone_no' => 'required|numeric|unique:users,phone_no',
+                'dob' => 'required|date|before:today',
                 'address' => 'required',
                 'gender' => 'required',
                 'password' => 'required|string|min:8|confirmed',
@@ -24,9 +24,9 @@ class RegisterUserController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->phone_no = $request->phoneno;
-        $user->d_o_b = $request->dob;
-        $user->sddress = $request->address;
+        $user->phone_no = $request->phone_no;
+        $user->dob = $request->dob;
+        $user->address = $request->address;
         $user->gender = $request->gender;
         $user->password = Hash::make($request->password);
         $user->role = "user";

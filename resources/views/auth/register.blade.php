@@ -13,6 +13,7 @@
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register-user') }}">
+                            
                             @csrf
 
                             <div class="row mb-3">
@@ -43,10 +44,10 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="phone" class=" col-form-label text-md-end">{{ __('Phone No') }}</label>
-                                    <input id="phoneno" type="tel" class="form-control @error('phoneno') is-invalid @enderror"
-                                        name="phoneno" value="{{ old('phoneno') }}" autocomplete="phoneno">
+                                    <input id="phone_no" type="tel" class="form-control @error('phone_no') is-invalid @enderror"
+                                        name="phone_no" value="{{ old('phone_no') }}" autocomplete="phone_no">
 
-                                    @error('phoneno')
+                                    @error('phone_no')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
