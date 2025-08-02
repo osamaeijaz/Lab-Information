@@ -31,7 +31,8 @@ class RegisterUserController extends Controller
         $user->password = Hash::make($request->password);
         $user->role = "user";
         $user->save();
-        return redirect()->back()->with('success', 'User created successfully');
+        return redirect()->route('home')->with('success', 'User created successfully');
+
 
     }
 }
