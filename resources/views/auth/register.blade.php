@@ -12,7 +12,7 @@
 
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register-user') }}">
                             @csrf
 
                             <div class="row mb-3">
@@ -43,10 +43,10 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="phone" class=" col-form-label text-md-end">{{ __('Phone No') }}</label>
-                                    <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror"
-                                        name="phone" value="{{ old('phone') }}" autocomplete="phone">
+                                    <input id="phoneno" type="tel" class="form-control @error('phoneno') is-invalid @enderror"
+                                        name="phoneno" value="{{ old('phoneno') }}" autocomplete="phoneno">
 
-                                    @error('phone')
+                                    @error('phoneno')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -55,7 +55,7 @@
                                 <div class="col-md-6">
                                     <label for="dob" class=" col-form-label text-md-end">{{ __('D.O.B') }}</label>
                                     <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror"
-                                        name="email" value="{{ old('dob') }}" autocomplete="dob">
+                                        name="dob" value="{{ old('dob') }}" autocomplete="dob">
 
                                     @error('dob')
                                         <span class="invalid-feedback" role="alert">
@@ -88,8 +88,10 @@
                                         <option value="Custom" {{ old('gender') == 'Custom' ? 'selected' : '' }}>
                                             Custom</option>
                                     </select>
-                                    @error('gender')
-                                        <font color='red'>{{ $message }}</font>
+                                     @error('gender')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                     @enderror
                                 </div>
                             </div>
