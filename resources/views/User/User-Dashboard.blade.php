@@ -6,6 +6,6 @@
     <title>@yield('user-title','User-Dashboard')</title>
 </head>
 <body>
-    
+     <h1>User Dashboard</h1>
 </body>
 </html>
